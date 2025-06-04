@@ -1,6 +1,6 @@
 [package]
 name = "manually-static"
-version = "1.1.0"
+version = "1.1.1"
 edition = "2021"
 license = "MIT"
 description = """
@@ -10,7 +10,7 @@ It is unsafe but with `debug_assertions` it panics when the usage is wrong.
 rust-version = "1.70.0"
 authors = ["Eugene Usachev <https://github.com/Eugene-Usachev> and orengine contributors <team@orengine>"]
 readme = "README.md"
-repository = "https://github.com/Eugene-Usachev/manually-static"
+repository = "https://github.com/orengine/manually-static"
 categories = ["memory-management"]
 keywords = ["memory-management", "static", "lifetime", "unsafe"]
 
