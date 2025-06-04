@@ -29,7 +29,7 @@ First, add `manually-static` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-manually-static = "1.1.1" # Or the latest version
+manually-static = "1.1.2" # Or the latest version
 ```
 
 ## Threading Example (Illustrating `'static` need)
