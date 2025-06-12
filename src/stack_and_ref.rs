@@ -90,7 +90,7 @@ impl<T> Drop for ManuallyStatic<T> {
 }
 
 /// A reference to the value held by [`ManuallyStatic<T>`].
-/// In debug builds, it will panic if dereferenced after the
+/// In debug builds, it panics if dereferenced after the
 /// original [`ManuallyStatic`] has been dropped.
 pub struct ManuallyStaticRef<T> {
     value_ref: *const T,
@@ -111,6 +111,16 @@ impl<T> Deref for ManuallyStaticRef<T> {
         }
 
         unsafe { &*self.value_ref }
+    }
+}
+
+impl<T> Clone for ManuallyStaticRef<T> {
+    fn clone(&self) -> Self {
+        Self {
+            value_ref: self.value_ref,
+            #[cfg(debug_assertions)]
+            was_dropped: self.was_dropped.clone(),
+        }
     }
 }
 
